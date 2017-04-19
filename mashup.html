@@ -1,15 +1,46 @@
 <!DOCTYPE html>
 <html>
+<head>
+
+</head>
 <body>
-<link rel="stylesheet" href="mashup.css">
+<form>
 
-<iframe src="https://www.trivago.com" width="700" height="700">
-</iframe>
+<input type="text" id = "mysearch" name="search" placeholder="Search..">
 
-<iframe src="https://www.yelp.com/college-station-tx-us" width="700" height="700">
-</iframe>
+</form>
 
-<input type="text" name="search" placeholder="Search..">
+<script type="text/javascript">
+
+
+function newSite() {
+	var str2 = 'https://www.travelocity.com/Hotel-Search?#&destination=' + document.getElementById("mysearch").value; 
+    var sites = [ str2]
+
+    document.getElementById('myIframe').src = sites[Math.floor(Math.random() * sites.length)];
+}    
+</script>
+
+<input type="button" value="Update1" onClick="newSite()" />
+<iframe id="myIframe" src="https://travelocity.com" width="700" height="700"></iframe>
+
+<script type="text/javascript">
+
+
+function newSite2() {
+	var str = 'https://tripadvisor.com/' + document.getElementById("mysearch").value;
+    var sites = [ str ]
+
+    document.getElementById('myIframe2').src = sites[Math.floor(Math.random() * sites.length)];
+}    
+</script>
+
+<input type="button" value="Update2" onClick="newSite2()" />
+<iframe id="myIframe2" src="https://tripadvisor.com" width="700" height="700"></iframe>
+
+
+
+
 
 </body>
 </html>
