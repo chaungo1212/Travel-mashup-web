@@ -1,0 +1,28 @@
+FUNCTIONALITY OF EXPLORESCORT:
+
+The 5 boxes grouped together on the far left will be used to send and
+receive data from Trivago related to hotels.  All of them will be dialog
+boxes, except for the one with the title "State", which is a dropdown
+multichoice box.
+
+Once this information is received, it will send the address of the hotel
+to Yelp.  The user will then be able to search for businesses related to
+whatever they're looking for by selecting one of the 12 radio buttons.
+Further radio buttons located on the far left allow for the user to sort 
+their results as they see fit.
+
+Lastly, if the user wishes to use Uber to get from their hotel to the 
+business, which can be determined by the raido buttons on the bottom,
+our website will generate an estimate of the cost for that ride and
+display it in the non-editable text box to the left of the Uber options.
+
+
+GRAPHICS, ETC. OF EXPLORESCORT:
+
+The color scheme will be as it appears in the sketch, maroon and white.
+All dialog boxes, radio buttons, etc. will be outlined in black and not
+gray.  Below these options, Yelp will be desplayed in a half window
+followed by Trivago in another half window.  The sizes of the sketch will
+likely not be their actual sizes.
+
+The only picture we plan to use is the ExplorEscort logo seen at the top.
