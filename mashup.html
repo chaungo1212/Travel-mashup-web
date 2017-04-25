@@ -6,37 +6,52 @@
 <body>
 <form>
 
-<input type="text" id = "mysearch" name="search" placeholder="Search..">
+<input type="text" id = "osearch" name="origin" placeholder="Origin City">
+<input type="text" id = "ocsearch" name="originc" placeholder="Origin Country">
+<input type="text" id = "dsearch" name="destination" placeholder="Destination City">
+<input type="text" id = "dcsearch" name="destinationc" placeholder="Destination Country">
+<input type="text" id = "sdate" name="start" placeholder="Start Date (dd-mm-yyyy)">
+<input type="text" id = "edate" name="end" placeholder="End Date (dd-mm-yyyy">
+<input type="text" id = "nump" name="pnum" placeholder="# of People">
+<input type="text" id = "esearch" name="events" placeholder="Event Types">
+
+
 
 </form>
 
-<script type="text/javascript">
 
+<input type="button" value="Search" onClick="newSite2()" />
 
-function newSite() {
-	var str2 = 'https://www.travelocity.com/Hotel-Search?#&destination=' + document.getElementById("mysearch").value; 
-    var sites = [ str2]
-
-    document.getElementById('myIframe').src = sites[Math.floor(Math.random() * sites.length)];
-}    
-</script>
-
-<input type="button" value="Update1" onClick="newSite()" />
-<iframe id="myIframe" src="https://travelocity.com" width="700" height="700"></iframe>
 
 <script type="text/javascript">
 
 
 function newSite2() {
-	var str = 'https://tripadvisor.com/' + document.getElementById("mysearch").value;
-    var sites = [ str ]
+	var o = document.getElementById("osearch").value;
+	var oc = document.getElementById("ocsearch").value;
+	var d = document.getElementById("dsearch").value;
+	var dc = document.getElementById("dcsearch").value;
+	var s = document.getElementById("sdate").value;
+	var e = document.getElementById("edate").value;
+	var n = document.getElementById("nump").value;
+	var ev = document.getElementById("esearch").value;
+
+    var str = 'http://go.waynaut.com/waypack/' + o + '/' + d + '/' + s + '/' + e + '?a=' + n;
+    var sites = [ str ];
 
     document.getElementById('myIframe2').src = sites[Math.floor(Math.random() * sites.length)];
+
+    var str2 = 'https://www.eventbrite.com/d/' + dc + '--' + d + '/' + ev + '/';
+    var sites = [ str2];
+
+    document.getElementById('myIframe').src = sites[Math.floor(Math.random() * sites.length)];
+    
+	
 }    
 </script>
 
-<input type="button" value="Update2" onClick="newSite2()" />
-<iframe id="myIframe2" src="https://tripadvisor.com" width="700" height="700"></iframe>
+<iframe id="myIframe2" src="http://www.waynaut.com/white-label" width="700" height="700"></iframe>
+<iframe id="myIframe" src="https://www.eventbrite.com" width="700" height="700"></iframe>
 
 
 
