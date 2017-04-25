@@ -13,7 +13,6 @@
 <input type="text" id = "sdate" name="start" placeholder="Start Date (dd-mm-yyyy)">
 <input type="text" id = "edate" name="end" placeholder="End Date (dd-mm-yyyy">
 <input type="text" id = "nump" name="pnum" placeholder="# of People">
-<input type="text" id = "esearch" name="events" placeholder="Event Types">
 
 
 
@@ -41,7 +40,7 @@ function newSite2() {
 
     document.getElementById('myIframe2').src = sites[Math.floor(Math.random() * sites.length)];
 
-    var str2 = 'https://www.eventbrite.com/d/' + dc + '--' + d + '/' + ev + '/';
+    var str2 = 'http://www.barchick.com/city-guides/' + d;
     var sites = [ str2];
 
     document.getElementById('myIframe').src = sites[Math.floor(Math.random() * sites.length)];
@@ -51,7 +50,7 @@ function newSite2() {
 </script>
 
 <iframe id="myIframe2" src="http://www.waynaut.com/white-label" width="700" height="700"></iframe>
-<iframe id="myIframe" src="https://www.eventbrite.com" width="700" height="700"></iframe>
+<iframe id="myIframe" src="http://www.barchick.com" width="700" height="700"></iframe>
 
 
 
