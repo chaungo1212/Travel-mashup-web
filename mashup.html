@@ -14,18 +14,20 @@
 <input type="text" id = "edate" name="end" placeholder="End Date (dd-mm-yyyy">
 <input type="text" id = "nump" name="pnum" placeholder="# of People">
 
+<input type="button" value="Search" onClick="newSite2()">
 
 
 </form>
 
+<input type="button" value="Search" onClick="newSite2()">
 
-<input type="button" value="Search" onClick="newSite2()" />
 
 
 <script type="text/javascript">
 
 
 function newSite2() {
+
 	var o = document.getElementById("osearch").value;
 	var oc = document.getElementById("ocsearch").value;
 	var d = document.getElementById("dsearch").value;
@@ -33,19 +35,18 @@ function newSite2() {
 	var s = document.getElementById("sdate").value;
 	var e = document.getElementById("edate").value;
 	var n = document.getElementById("nump").value;
-	var ev = document.getElementById("esearch").value;
+
 
     var str = 'http://go.waynaut.com/waypack/' + o + '/' + d + '/' + s + '/' + e + '?a=' + n;
     var sites = [ str ];
 
+    var str2 = 'http://www.barchick.com/city-guides/' + d;
+    var sites2 = [ str2];
+
     document.getElementById('myIframe2').src = sites[Math.floor(Math.random() * sites.length)];
 
-    var str2 = 'http://www.barchick.com/city-guides/' + d;
-    var sites = [ str2];
-
-    document.getElementById('myIframe').src = sites[Math.floor(Math.random() * sites.length)];
-    
-	
+    document.getElementById('myIframe').src = sites2[Math.floor(Math.random() * sites2.length)];
+   
 }    
 </script>
 
