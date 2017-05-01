@@ -31,9 +31,9 @@
 					<input type="text" id = "dcsearch" name="destinationc" placeholder="Destination Country"><br>
 				</span>
 				<span height="80px" width="100px" style="float:left;padding-right:100px;padding-bottom:10px;padding-left:24px;">
-					<input type="text" id = "sdate" name="start" placeholder="Start Date (dd-mm-yyyy)">
+					<input type="date" id = "sdate" name="start" >
 					-
-					<input type="text" id = "edate" name="end" placeholder="End Date (dd-mm-yyyy)">
+					<input type="date" id = "edate" name="end" >
 				</span>
 			</span>
 			<span height="80px" width="100px" style="float:left;padding-right:20px;padding-bottom:20px;padding-left:100px;">
@@ -53,12 +53,32 @@
 				var oc = document.getElementById("ocsearch").value;
 				var d = document.getElementById("dsearch").value;
 				var dc = document.getElementById("dcsearch").value;
-				var s = document.getElementById("sdate").value;
-				var e = document.getElementById("edate").value;
+				var s = new Date(document.getElementById("sdate").value);
+				var syear;
+				var smonth;
+				var sday;
+				var e = new Date(document.getElementById("edate").value);
+				var eyear;
+				var emonth;
+				var eday;
 				var n = document.getElementById("nump").value;
 
 
-    			var str = 'http://go.waynaut.com/waypack/' + o + '/' + d + '/' + s + '/' + e + '?a=' + n;
+				if(!!s.valueOf()){
+					syear = s.getFullYear();
+					smonth = s.getMonth()+1;
+					sday = s.getDate()+1;
+
+				}
+				if(!!e.valueOf()){
+					eyear = e.getFullYear();
+					emonth = e.getMonth()+1;
+					eday = e.getDate()+1;
+
+				}
+
+
+    			var str = 'http://go.waynaut.com/waypack/' + o + '/' + d + '/' + sday + '-' + smonth + '-' + syear +  '/' + eday + '-' + emonth + '-' + eyear + '?a=' + n;
 				document.getElementById('Iframe').src = str;
 			}    
 		</script>
@@ -87,13 +107,57 @@
 				var oc = document.getElementById("ocsearch").value;
 				var d = document.getElementById("dsearch").value;
 				var dc = document.getElementById("dcsearch").value;
-				var s = document.getElementById("sdate").value;
-				var e = document.getElementById("edate").value;
+				var s = new Date(document.getElementById("sdate").value);
+				var temp;
+				var temp2;
+				var mon;
 				var n = document.getElementById("nump").value;
 				var g = document.getElementById("gen").value;
 
+				if(!!s.valueOf()){
+					temp = s.getMonth()+1;
+					temp2 = s.getFullYear();
+					if(temp==1){
+						mon = "January";
+					}
+					else if(temp==2){
+						mon = "February";
+					}
+					else if(temp==3){
+						mon = "March";
+					}
+					else if(temp==4){
+						mon = "April";
+					}
+					else if(temp==5){
+						mon = "May";
+					}
+					else if(temp==6){
+						mon = "June";
+					}
+					else if(temp==7){
+						mon = "July";
+					}
+					else if(temp==8){
+						mon = "August";
+					}
+					else if(temp==9){
+						mon = "September";
+					}
+					else if(temp==10){
+						mon = "October";
+					}
+					else if(temp==11){
+						mon = "November";
+					}
+					else if(temp==12){
+						mon = "December";
+					}
+				}
+				
 
-    			var str = 'https://www.musicfestivalwizard.com/all-festivals/?festival_guide=' + dc +'&month=&festivalgenre='+ g +'&festivaltype=';
+
+    			var str = 'https://www.musicfestivalwizard.com/all-festivals/?festival_guide=' + dc +'&month=' + mon + '-' + temp2 + '&festivalgenre='+ g +'&festivaltype=';
 				document.getElementById('Iframe').src = str;
 			}    
 		</script>
