@@ -16,6 +16,11 @@
 		</span>
 		
 		<form>
+
+			<input type="button" value="Waynaut" onClick="newSite()">
+			<input type="button" value="Barchick" onClick="newSite2()">
+			<input type="button" value="MFW" onClick="newSite3()">
+
 			<span style="float:left;padding-right:60%;">
 				<span height="80px" width="100px" style="float:left;padding-right:5px;padding-bottom:10px;">
 					<input type="text" id = "osearch" name="origin" placeholder="Origin City" maxlength=20><br>
@@ -26,21 +31,38 @@
 					<input type="text" id = "dcsearch" name="destinationc" placeholder="Destination Country"><br>
 				</span>
 				<span height="80px" width="100px" style="float:left;padding-right:100px;padding-bottom:10px;padding-left:24px;">
-					<input type="date" id = "sdate" name="start" placeholder="Start Date (dd-mm-yyyy)">
+					<input type="text" id = "sdate" name="start" placeholder="Start Date (dd-mm-yyyy)">
 					-
-					<input type="date" id = "edate" name="end" placeholder="End Date (dd-mm-yyyy">
+					<input type="text" id = "edate" name="end" placeholder="End Date (dd-mm-yyyy)">
 				</span>
 			</span>
 			<span height="80px" width="100px" style="float:left;padding-right:20px;padding-bottom:20px;padding-left:100px;">
 				<input type="text" id = "nump" name="pnum" placeholder="# of People">
 			</span>
-			<span height="80px" width="100px" style="float:right;padding-right:20px;padding-bottom:20px;padding-left:60px;">
-				<input type="text" id = "esearch" name="events" placeholder="Event Types">
+			<span height="80px" width="100px" style="float:left;padding-right:20px;padding-bottom:20px;padding-left:100px;">
+				<input type="text" id = "gen" name="genre" placeholder="Genre of Concert">
 			</span>
+
+
+
 		</form>
-		<center style="float:center;">
-			<input type="button" value="Search" onClick="newSite2()">
-		</center>
+
+		<script type="text/javascript">
+			function newSite() {
+				var o = document.getElementById("osearch").value;
+				var oc = document.getElementById("ocsearch").value;
+				var d = document.getElementById("dsearch").value;
+				var dc = document.getElementById("dcsearch").value;
+				var s = document.getElementById("sdate").value;
+				var e = document.getElementById("edate").value;
+				var n = document.getElementById("nump").value;
+
+
+    			var str = 'http://go.waynaut.com/waypack/' + o + '/' + d + '/' + s + '/' + e + '?a=' + n;
+				document.getElementById('Iframe').src = str;
+			}    
+		</script>
+		
 		
 		<script type="text/javascript">
 			function newSite2() {
@@ -48,30 +70,38 @@
 				var oc = document.getElementById("ocsearch").value;
 				var d = document.getElementById("dsearch").value;
 				var dc = document.getElementById("dcsearch").value;
-				var sm = document.getElementById("sdate").getMonth();
-				var sd = document.getElementById("sdate").getDay();
-				var sy = document.getElementById("sdate").getYear();
-				var em = document.getElementById("edate").getMonth();
-				var ed = document.getElementById("edate").getDay();
-				var ey = document.getElementById("edate").getYear();
+				var s = document.getElementById("sdate").value;
+				var e = document.getElementById("edate").value;
 				var n = document.getElementById("nump").value;
-				var ev = document.getElementById("esearch").value;
-				
-				var str = 'http://go.waynaut.com/waypack/' + o + '/' + d + '/' + sd + '-' + sm + '-' + sy + '/' + ed + '-' + em + '-' + ey + '?a=' + n;
-				document.getElementById('Waynaut').src = str;
+
 				
 				var str2 = 'http://www.barchick.com/city-guides/' + d;
-				document.getElementById('EventBrite').src = str2;
+
+				document.getElementById('Iframe').src = str2;
 			}    
 		</script>
 
-		<iframe id="Waynaut" src="http://www.waynaut.com/white-label" width="100%" height="600" style="background-color:#ffffff;">
+		<script type="text/javascript">
+			function newSite3() {
+				var o = document.getElementById("osearch").value;
+				var oc = document.getElementById("ocsearch").value;
+				var d = document.getElementById("dsearch").value;
+				var dc = document.getElementById("dcsearch").value;
+				var s = document.getElementById("sdate").value;
+				var e = document.getElementById("edate").value;
+				var n = document.getElementById("nump").value;
+				var g = document.getElementById("gen").value;
+
+
+    			var str = 'https://www.musicfestivalwizard.com/all-festivals/?festival_guide=' + dc +'&month=&festivalgenre='+ g +'&festivaltype=';
+				document.getElementById('Iframe').src = str;
+			}    
+		</script>
+
+		<iframe id="Iframe" src="http://www.waynaut.com/white-label" width="100%" height="600" style="background-color:#ffffff;">
 		</iframe>
 		
 		<span width="100%" style="padding:20px;"></span>
-		
-		<iframe id="EventBrite" src="http://www.barchick.com/" width="100%" height="600" style="background-color:#ffffff;">
-		</iframe>
 
 	</body>
 
