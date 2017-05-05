@@ -3,52 +3,109 @@
 <html lang="en">
 	<link rel="stylesheet" href="styles.css">
 	<head>
-	
-	</head>
-	<body style="background-image=url('Background.png')";>
 		<center>
 			<img src="Banner.png" alt="Logo" style="width:468px;height:60px;padding-top:10px;float:center;">
 		</center>
-		<span style="float:bottom">
-			<center>
-				<img src="Divider.png" alt="Divider" style="width:1024px;height:20px;padding-bottom:20px;">
-			</center>
-		</span>
-		
+	</head>
+	<body>
+	
 		<form>
-
-			<input type="button" value="Waynaut" onClick="newSite()">
-			<input type="button" value="Barchick" onClick="newSite2()">
-			<input type="button" value="MFW" onClick="newSite3()">
-
-			<span style="float:left;padding-right:60%;">
-				<span height="80px" width="100px" style="float:left;padding-right:5px;padding-bottom:10px;">
-					<input type="text" id = "osearch" name="origin" placeholder="Origin City" maxlength=20><br>
-					<input type="text" id = "ocsearch" name="originc" placeholder="Origin Country"><br>
-				</span>	
-				<span height="80px" width="100px" style="float:left;padding-right:5px;padding-bottom:10px;">
-					<input type="text" id = "dsearch" name="destination" placeholder="Destination City"><br>
-					<input type="text" id = "dcsearch" name="destinationc" placeholder="Destination Country"><br>
-				</span>
-				<span height="80px" width="100px" style="float:left;padding-right:100px;padding-bottom:10px;padding-left:24px;">
-					<input type="date" id = "sdate" name="start" >
-					-
-					<input type="date" id = "edate" name="end" >
-				</span>
-			</span>
-			<span height="80px" width="100px" style="float:left;padding-right:20px;padding-bottom:20px;padding-left:100px;">
-				<input type="text" id = "nump" name="pnum" placeholder="# of People">
-			</span>
-			<span height="80px" width="100px" style="float:left;padding-right:20px;padding-bottom:20px;padding-left:100px;">
-				<input type="text" id = "gen" name="genre" placeholder="Genre of Concert">
-			</span>
+			<div id="NavigationMaster">
+				<center style="margin-bottom:20px;">
+					<span>
+						<input type="button" value="Transportation" onClick="gotoWaynaut()">
+					</span>
+					<span>
+						<input type="button" value="Nightlife" onClick="gotoBarchick()">
+					</span>
+					<span>
+						<input type="button" value="Music Festivals" onClick="gotoMFW()">
+					</span>
+					<span>
+						<input type="button" value="Input" onClick="gotoInput()">
+					</span>
+				</center>
+			</div>
+			<div id="InputMaster">
+				<div id="BarMaster">
+					<p style="font-size:20px;text-align:center;width:100%;height:20px;">
+						Bar Options
+					</p>
+					<span>
+						<input type="checkbox" id = "cocktailbox" name="cocktail" style="margin-bottom:5px;"> Cocktails<br>
+					</span>
+					<span>					
+						<input type="checkbox" id = "beerbox" name="beer" style="margin-bottom:5px;"> Beer<br>
+					</span>
+					<span>
+						<input type="checkbox" id = "winebox" name="wine" style="margin-bottom:25px;"> Wine<br>
+					</span>
+					<span>					
+						<input type="checkbox" id = "foodbox" name="food" style="margin-bottom:25px;"> Food<br>
+					</span>
+					<span>
+						<input type="checkbox" id = "sportsbox" name="sports" style="margin-bottom:5px;"> Sports<br>
+					</span>
+					<span>
+						<input type="checkbox" id = "dancebox" name="dance" style="margin-bottom:5px;"> Dance<br>
+					</span>
+				</div>
+				
+				<div id="TravelMaster">
+					<p style="font-size:20px;text-align:center;width:100%;height:20px;">
+						Travel Options
+					</p>
+					<span height="80px" style="text-align:center;float:left;padding-right:5px;padding-bottom:10px;padding-left:20px;">
+						Origin City <br>
+						<input type="text" id = "osearch" name="origin" style="margin-bottom:5px;"><br>
+						Origin Country <br>
+						<input type="text" id = "ocsearch" name="originc"><br>
+					</span>	
+					<span height="80px" width="100px" style="text-align:center;float:left;padding-right:5px;padding-bottom:10px;padding-left:20px;">
+						Destination City <br>
+						<input type="text" id = "dsearch" name="destination" style="margin-bottom:5px;"><br>
+						Destination Country <br>
+						<input type="text" id = "dcsearch" name="destinationc"><br>
+					</span>
+					<span height="40px" width="100px" style="float:left;padding-bottom:10px;padding-left:54px;">
+						<p style="text-align: center"> 
+							Arrival Date<br>
+							<input type="date" id = "sdate" name="start" >
+						</p>
+					</span>
+					<span height="40px" width="100px" style="float:left;padding-right:10px;padding-bottom:10px;padding-left:10px;">
+						<p style="text-align: center">
+							Departure Date<br>
+							<input type="date" id = "edate" name="end" >
+						</p>
+					</span>
+					<span height="40px" width="40%" style="padding-right:30%;padding-bottom:10px;padding-left:30%;">
+						Number of People Going<br>
+						<center> <input type="text" id = "nump" name="pnum" placeholder="i.e. 3"> </center>
+					</span>
+				</div>
+				
+				<div id="MusicMaster">
+					<p style="font-size:20px;text-align:center;width:100%;height:20px;">
+						Music Festival Options
+					</p>
+					<p style="text-align:center;margin-bottom:2px;">
+						Genre of Music
+					</p>
+					<center> <input type="text" id = "gen" name="genre" placeholder="Any"> </center>
+				</div>
+			</div>
 
 
 
 		</form>
+		
+		<iframe id="webWindow" src="" width="0%" height="0%" style="background-color:#ffffff;border:0;border:none;">
+		</iframe>
 
 		<script type="text/javascript">
-			function newSite() {
+		
+			function gotoWaynaut() {
 				var o = document.getElementById("osearch").value;
 				var oc = document.getElementById("ocsearch").value;
 				var d = document.getElementById("dsearch").value;
@@ -62,30 +119,24 @@
 				var emonth;
 				var eday;
 				var n = document.getElementById("nump").value;
-
-
 				if(!!s.valueOf()){
 					syear = s.getFullYear();
 					smonth = s.getMonth()+1;
 					sday = s.getDate()+1;
-
 				}
 				if(!!e.valueOf()){
 					eyear = e.getFullYear();
 					emonth = e.getMonth()+1;
 					eday = e.getDate()+1;
-
 				}
-
-
     			var str = 'http://go.waynaut.com/waypack/' + o + '/' + d + '/' + sday + '-' + smonth + '-' + syear +  '/' + eday + '-' + emonth + '-' + eyear + '?a=' + n;
-				document.getElementById('Iframe').src = str;
+				document.getElementById('webWindow').src = str;
+				window.parent.document.getElementById('webWindow').width  = '100%';
+				window.parent.document.getElementById('webWindow').height = '600px';	
+				document.getElementById('InputMaster').setAttribute("style","display:none;");
 			}    
-		</script>
-		
-		
-		<script type="text/javascript">
-			function newSite2() {
+
+			function gotoBarchick() {
 				var o = document.getElementById("osearch").value;
 				var oc = document.getElementById("ocsearch").value;
 				var d = document.getElementById("dsearch").value;
@@ -93,16 +144,50 @@
 				var s = document.getElementById("sdate").value;
 				var e = document.getElementById("edate").value;
 				var n = document.getElementById("nump").value;
-
 				
-				var str2 = 'http://www.barchick.com/city-guides/' + d;
-
-				document.getElementById('Iframe').src = str2;
+				
+								var isBeer = document.getElementById("beerbox").checked;
+				var isCocktails = document.getElementById("cocktailbox").checked;
+				var isWine = document.getElementById("winebox").checked;
+				var isDance = document.getElementById("dancebox").checked;
+				var isSports = document.getElementById("sportsbox").checked;
+				var isFood = document.getElementById("foodbox").checked;
+				
+				var str;
+				if (n <= 4) {
+					str = 'http://www.barchick.com//find-a-bar/?cities=' + d;
+				}
+				else {
+					str = 'http://www.barchick.com//find-a-bar/?cities=' + d + '&groups=on';
+				}
+				
+				if (isBeer){
+					str = str + '&beers=on';
+				}
+				if (isWine){
+					str = str + '&wine=on';
+				}
+				if (isCocktails){
+					str = str + '&cocktails=on';
+				}
+				if (isDance){
+					str = str + '&dancing=on';
+				}
+				if (isSports){
+					str = str + '&sports=on';
+				}
+				if (isFood){
+					str = str + '&food=on';
+				}
+				
+				document.getElementById('webWindow').src = str;
+				window.parent.document.getElementById('webWindow').width  = '100%';
+				window.parent.document.getElementById('webWindow').height = '600px';
+				
+				document.getElementById('InputMaster').setAttribute("style","display:none;");
 			}    
-		</script>
 
-		<script type="text/javascript">
-			function newSite3() {
+			function gotoMFW() {
 				var o = document.getElementById("osearch").value;
 				var oc = document.getElementById("ocsearch").value;
 				var d = document.getElementById("dsearch").value;
@@ -113,7 +198,6 @@
 				var mon;
 				var n = document.getElementById("nump").value;
 				var g = document.getElementById("gen").value;
-
 				if(!!s.valueOf()){
 					temp = s.getMonth()+1;
 					temp2 = s.getFullYear();
@@ -155,17 +239,19 @@
 					}
 				}
 				
-
-
     			var str = 'https://www.musicfestivalwizard.com/all-festivals/?festival_guide=' + dc +'&month=' + mon + '-' + temp2 + '&festivalgenre='+ g +'&festivaltype=';
-				document.getElementById('Iframe').src = str;
+				document.getElementById('webWindow').src = str;
+				window.parent.document.getElementById('webWindow').width  = '100%';
+				window.parent.document.getElementById('webWindow').height = '600px';
+				document.getElementById('InputMaster').setAttribute("style","display:none;");
 			}    
-		</script>
 
-		<iframe id="Iframe" src="http://www.waynaut.com/white-label" width="100%" height="600" style="background-color:#ffffff;">
-		</iframe>
-		
-		<span width="100%" style="padding:20px;"></span>
+			function gotoInput(){
+				window.parent.document.getElementById('webWindow').width  = '0%';
+				window.parent.document.getElementById('webWindow').height = '0%';
+				document.getElementById('InputMaster').setAttribute("style","display:all;");
+			}
+		</script>
 
 	</body>
 
